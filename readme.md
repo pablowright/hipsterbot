@@ -2,11 +2,10 @@
  
  * Generates some random nonsense then tweets it.
  *
- * @author Paul Wright. pablo.wright@gmail.com 
- * @based on Daily Mail Headline Generator by
- * @author Damien Walsh <me@damow.net>
- * @version 1.0
- * @01/02/2015 PRW
+ * author Paul Wright. pablo.wright@gmail.com 
+ * based on Daily Mail Headline Generator by
+ * author Damien Walsh <me@damow.net>
+ * version 1.02    01/02/2015 PRW
  
  
  * PHP script to generate a some random gibberish and tweet it.
