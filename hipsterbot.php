@@ -5,7 +5,7 @@
  * @author Paul Wright. pablo.wright@gmail.com 
  * @based on Daily Mail Headline Generator by
  * @author Damien Walsh <me@damow.net>
- * @version 1.0
+ * @version 2.0
  * @01/02/2015
  */
 /**
@@ -21,10 +21,26 @@
  
 function gen_nonsense()
 {
-  // ------------------------------------------------------
-  // Load the "ennui" database...
-  // ------------------------------------------------------
-  $ennui = (array)json_decode(file_get_contents('hipster.json'));
+  // ----------------------------------------------------------------------------------------------------
+  // Load the "ennui" database based on user ID... Comment out if you have only one user/twitter account:
+  // ----------------------------------------------------------------------------------------------------
+      $userID = $_GET["UID"];
+    if ($userID == "1") {
+	$ennui = (array)json_decode(file_get_contents('hipster.json'));
+	} elseif ($userID == "2") {
+	$ennui = (array)json_decode(file_get_contents('anti-robot.json'));
+	} elseif ($userID == "3") {
+	$ennui = (array)json_decode(file_get_contents('hipster.json'));
+	} elseif ($userID == "4") {
+	$ennui = (array)json_decode(file_get_contents('hipster.json'));
+//	} elseif ($userID == "5") {
+//	$ennui = (array)json_decode(file_get_contents('hipster.json'));
+	} else {
+	exit("No user by that ID");
+	}
+  
+  // Uncomment if you have only one user/twitter account:
+  // $ennui = (array)json_decode(file_get_contents('hipster.json'));
   
   // Convert to array
   foreach($ennui as $key => & $value)
@@ -99,11 +115,11 @@ switch ($userID) {
         $file = "../path/to/user4.php";
         break;
     default:
-        exit("No user by that ID");
+        exit("No user by ID: $userID");
 }
 
 	// ----------------------------------------------------------
-	// Include selected user's twitter app credentials from file:
+	// Include selected user's twitter app credentials from $file:
 	// ---------------------------------------------------------- 
 include "$file" ; 
 
