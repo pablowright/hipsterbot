@@ -5,7 +5,7 @@
  * @author Paul Wright. pablo.wright@gmail.com 
  * @based on Daily Mail Headline Generator by
  * @author Damien Walsh <me@damow.net>
- * @version 2.2
+ * @version 2.02
  * @01/02/2015
  */
 /**
