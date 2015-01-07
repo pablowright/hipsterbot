@@ -5,7 +5,7 @@
  * @author Paul Wright. pablo.wright@gmail.com 
  * @based on Daily Mail Headline Generator by
  * @author Damien Walsh <me@damow.net>
- * @version 2.0
+ * @version 2.2
  * @01/02/2015
  */
 /**
@@ -150,10 +150,18 @@ $statusError = "{$statusCode}  {$tweetContentDate} TwitterUser {$userID}";
 		error_log('Error posting to twitter: '.$statusError."\n", 3, "tweeterErrors.log");
                         }
        echo "$tweetContent";
+   // ----------------------------------------------------------
+   // Clear variables:
+   // ----------------------------------------------------------
+$keys = array();
 
-	// ----------------------------------------------------------
-	// Clear data:
-	// ----------------------------------------------------------
-unset($ennui, $form);
+	foreach($GLOBALS as $k => $v){
+		$keys[] = $k;
+	}
+	
+	for($t=1;$keys[$t];$t++){
+		unset($$keys[$t]);
+	}
+	unset($k); unset($v); unset($t);
 
 ?>
